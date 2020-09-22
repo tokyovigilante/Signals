@@ -1,7 +1,7 @@
 //
 //  Copyright (c) 2014 - 2017 Tuomas Artman. All rights reserved.
 //
-
+#if os(iOS)
 import ObjectiveC
 
 func setAssociatedObject<T>(_ object: AnyObject, value: T, associativeKey: UnsafeRawPointer, policy: objc_AssociationPolicy) {
@@ -23,3 +23,4 @@ func getOrCreateAssociatedObject<T>(_ object: AnyObject, associativeKey: UnsafeR
     setAssociatedObject(object, value: defaultValue, associativeKey: associativeKey, policy: policy)
     return defaultValue
 }
+#endif
